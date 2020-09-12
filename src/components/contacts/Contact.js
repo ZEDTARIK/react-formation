@@ -17,14 +17,15 @@ class Contact extends Component {
                 <div className="row">
                     <div className="panel panel-primary">
                         <div className="panel-heading">
-                            <h3 className="panel-title" onClick={this.showContact.bind(this)}>{fullName}</h3>
+                            <h3 style={{ cursor:'pointer'}} className="panel-title" onClick={this.showContact.bind(this)}>{fullName}</h3>                            
                         </div>
                         <div className="panel-body">
                             {(this.state.showContactToggle) ?
                                 (
                                     <ul className="list-group">
                                         <li className="list-group-item">{fullName}</li>
-                                        <li className="list-group-item">{email}</li>
+                                        <li className="list-group-item">{email}
+                                        </li>
                                     </ul>
                                 )
                                 : null

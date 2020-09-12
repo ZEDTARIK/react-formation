@@ -13,7 +13,7 @@ class Contacts extends Component {
         return (
             <>
                 {contacts.map((contact) => (
-                    <Contact data={contact} />))
+                    <Contact key={contact.id}  data={contact} />))
                 }
             </>
         )
