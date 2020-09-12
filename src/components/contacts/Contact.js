@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 
 class Contact extends Component {
 
-    showContact(fullName) {
-        console.log(fullName);
+    state = {
+        showContactToggle: true
+    }
+    showContact() {
+        this.setState({
+            showContactToggle: !this.state.showContactToggle
+        })
     }
     render() {
         const { fullName, email } = this.props.data;
@@ -12,13 +17,18 @@ class Contact extends Component {
                 <div className="row">
                     <div className="panel panel-primary">
                         <div className="panel-heading">
-                            <h3 onClick={this.showContact.bind(this, fullName)} className="panel-title">{fullName}</h3>
+                            <h3 className="panel-title" onClick={this.showContact.bind(this)}>{fullName}</h3>
                         </div>
                         <div className="panel-body">
-                            <ul className="list-group">
-                                <li className="list-group-item">{fullName}</li>
-                                <li className="list-group-item">{email}</li>
-                            </ul>
+                            {(this.state.showContactToggle) ?
+                                (
+                                    <ul className="list-group">
+                                        <li className="list-group-item">{fullName}</li>
+                                        <li className="list-group-item">{email}</li>
+                                    </ul>
+                                )
+                                : null
+                            }
                         </div>
                     </div>
                 </div>
