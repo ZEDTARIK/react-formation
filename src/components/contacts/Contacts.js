@@ -12,18 +12,9 @@ class Contacts extends Component {
         const { contacts } = this.state;
         return (
             <>
-                <div className="row">
-                    <div className="panel panel-primary">
-                        <div className="panel-heading">
-                            <h3 className="panel-title">Contact</h3>
-                        </div>
-                        <div className="panel-body">
-                            {contacts.map((contact) => (
-                                <Contact data={contact} />
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                {contacts.map((contact) => (
+                    <Contact data={contact} />))
+                }
             </>
         )
     }
